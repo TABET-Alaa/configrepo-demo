@@ -33,6 +33,10 @@ spring:
             - Path=/api/analytics/**
           filters:
             - StripPrefix=2
+security:
+  jwt:
+    jwk-set-uri: "http://auth-service:8081/.well-known/jwks.json"
+    issuer: "auth-service"
 
 eureka:
   client:
